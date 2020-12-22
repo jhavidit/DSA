@@ -17,7 +17,6 @@ public class max_min_element_in_array
             min=a;
             if(a>max)
             max = a;
-
         }
         System.out.println("max - "+max+"  min - "+min);
         in.close();
