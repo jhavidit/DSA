@@ -2,15 +2,14 @@ package strings;
 
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class palindrome_2 {
     public static void main(String args[])
     {
+        // reversing string by converting to char array and swapping using two pointer recursively 
         Scanner in = new Scanner(System.in);
         String str = in.next();
         char s[]  = str.toCharArray();
-        if(String.valueOf(rev(s,0,s.length -1)).compareTo(str)==0)
+        if(String.valueOf(rev(s,0,s.length -1)).compareTo(str)==0) 
         System.out.println("Palindrome");
         else 
         System.out.println("Not Palindrome");       
