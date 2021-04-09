@@ -1,17 +1,19 @@
 package strings;
 
-/*using two pointer method to reverse string using char array by recursion*/
+import java.util.*;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import javax.lang.model.util.ElementScanner14;
 
-public class reverse_string_1 {
+public class palindrome_2 {
     public static void main(String args[])
     {
         Scanner in = new Scanner(System.in);
         String str = in.next();
         char s[]  = str.toCharArray();
-        System.out.println(Arrays.toString(rev(s,0,s.length -1)));        
+        if(String.valueOf(rev(s,0,s.length -1)).compareTo(str)==0)
+        System.out.println("Palindrome");
+        else 
+        System.out.println("Not Palindrome");       
         in.close();
 
     }
@@ -27,5 +29,4 @@ public class reverse_string_1 {
         return rev(s,left+1,right-1);
         
     }
-    
 }
