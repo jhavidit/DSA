@@ -3,6 +3,10 @@ import java.util.*;
 
 public class duplicate_3 {
 
+    /* using map 
+    time complexity - O(nlogn)
+    space complexity - O(k) k = size of map */
+
     
     public static void main(String args[])
     {
@@ -22,7 +26,6 @@ public class duplicate_3 {
             char key = (char)mapElement.getKey();
             int value = ((int)mapElement.getValue());
 
-           
             System.out.println(key + ", count = " + value);
         }
 
