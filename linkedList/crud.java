@@ -45,7 +45,7 @@ public class crud {
 
     public void pushAtSpecific(int d, int pos) {
 
-        if (pos <= 0 || pos > length()+1)
+        if (pos <= 0 || pos > length() + 1)
             System.out.println("Invalid position");
         else {
             int i = 1;
@@ -57,12 +57,10 @@ public class crud {
                 temp = temp.next;
                 i++;
             }
-            if(prev==null)
-            {
+            if (prev == null) {
                 newNode.next = head;
                 head = newNode;
-            }
-            else{
+            } else {
                 prev.next = newNode;
                 newNode.next = temp;
             }
@@ -107,10 +105,10 @@ public class crud {
                 temp = temp.next;
                 i++;
             }
-            if(prev==null)
+            if (prev == null)
                 head = head.next;
             else
-            prev.next = temp.next;
+                prev.next = temp.next;
         }
     }
 
@@ -121,6 +119,16 @@ public class crud {
             temp = temp.next;
         }
         System.out.println();
+    }
+
+    public boolean search(int d, Node head) {
+
+        if (head==null)
+            return false;
+        else if(head.data==d)
+            return true;
+        else
+            return search(d, head.next);
     }
 
     public static void main(String[] args) {
@@ -134,7 +142,8 @@ public class crud {
         obj.deleteAtEnd();
         obj.pushAtBeginning(5);
         obj.pushAtEnd(6);
-        obj.pushAtSpecific(12,4);
+        obj.pushAtSpecific(12, 4);
+       System.out.println(obj.search(13, obj.head));
         System.out.println(obj.length());
 
         obj.display();
