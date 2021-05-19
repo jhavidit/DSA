@@ -31,6 +31,12 @@ public class reverse_linked_list_1 {
         newNode.next = null;
     }
 
+        /* Iterative solution taking curr,next and prev node and pointing current node to prev node and
+        changing position of curr, prev and next.
+        Time Complexity - O(n)
+        Space Complexity - O(1)
+        */
+
     public void reverseLinkedListIteration() {
         Node prev = null;
         Node curr = head;
@@ -44,10 +50,24 @@ public class reverse_linked_list_1 {
         head = prev;
     }
 
-    public void reverseLinkedListRecursion(Node curr, Node prev, Node next) {
+     /* Recursive solution taking curr,next and prev node and pointing current node to prev node and
+        changing position of curr, prev and next.
+        Time Complexity - O(n)
+        Space Complexity - O(n)
+        */
 
+    public Node reverseLinkedListRecursion(Node curr, Node prev, Node next) {
 
+        if (curr == null)
+            return prev;
+        else {
+            next = curr.next;
+            curr.next = prev;
+            return reverseLinkedListRecursion(next, curr, next);
+        }
     }
+
+    /* Can also be done using stack and array*/
 
     public void display() {
         Node temp = head;
@@ -68,6 +88,7 @@ public class reverse_linked_list_1 {
         obj.display();
         obj.reverseLinkedListIteration();
         obj.display();
-
+        obj.head = obj.reverseLinkedListRecursion(obj.head, null, null);
+        obj.display();
     }
 }
