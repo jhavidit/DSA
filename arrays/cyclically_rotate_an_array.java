@@ -22,6 +22,8 @@ class GFG {
 	    {
 	        arr[i+1]=arr[i];
 	    }
+			// predefined functio  to cirulate array
+			System.arraycopy(arr, 0, arr, 1, n - 2 + 1);
 	    arr[0] = a;
 	    for(int i=0;i<n;i++)
 	    {
