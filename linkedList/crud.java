@@ -25,10 +25,15 @@ public class crud {
     public void pushAtEnd(int d) {
         Node newNode = new Node(d);
         Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
+        if (temp == null) {
+            head = newNode;
+        } else {
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+
+            temp.next = newNode;
         }
-        temp.next = newNode;
         newNode.next = null;
     }
 
