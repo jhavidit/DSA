@@ -14,6 +14,11 @@ public class delete_loop_4 {
         }
     }
 
+    /* storing prev node and the current node in the hashset and iterate when current node is already present in the hashset
+    * link the previous node to null hence deleting the node and all the elements are present
+    * Time Complexity - O(n)
+    * Space Complexity - O(n) */
+
     public static void removeLoop(Node head) {
 
         HashSet<Node> h = new HashSet();
