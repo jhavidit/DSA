@@ -1,4 +1,4 @@
 # ImportantDSAProblems
-Solving 450 important DSA questions.
+Solving important DSA questions.
 
-450 question sheet link - https://drive.google.com/file/d/1FMdN_OCfOI0iAeDlqswCiC2DZzD4nPsb/view
+Stack notes - https://docs.google.com/document/d/1jHpV6sapme5VGQr8nIzhvRb6oEbgq3GMUGcqBJ2m-sE/edit?usp=sharing
