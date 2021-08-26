@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class PowerSet {
 
-    public static void powerSet(ArrayList<Character> input, ArrayList<Character> output, int index) {
+    public static void powerSet(String input, String output, int index) {
 
-        if (index >= input.size()) {
-            System.out.println(output);
+        if (index >= input.length()) {
+            System.out.print("{"+output+"}, ");
             return;
         }
 
         powerSet(input, output, index + 1);
-        output.add(input.get(index));
+        output+=input.charAt(index);
 
         powerSet(input, output, index + 1);
 
@@ -26,7 +26,7 @@ public class PowerSet {
         input.add('a');
         input.add('b');
         input.add('c');
-        powerSet(input, output, 0);
+        powerSet("abc", "", 0);
     }
 
 }
