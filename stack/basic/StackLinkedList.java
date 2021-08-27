@@ -16,37 +16,48 @@ public class StackLinkedList {
 
     }
 
-    void isEmpty(){
-        System.out.println(top==null);
+    void isEmpty() {
+        System.out.println(top == null);
     }
 
-    void push(int data){
+    void push(int data) {
         StackNode newNode = new StackNode(data);
-        if(top==null){
+        if (top == null) {
             top = newNode;
-        }
-        else
-        {
+        } else {
             newNode.next = top;
             top = newNode;
         }
     }
 
-    void pop(){
-        if(top==null)
+    void reverse() {
+        StackNode prev = null;
+        StackNode curr = top;
+        while (curr != null) {
+            StackNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        top = prev;
+
+    }
+
+    void pop() {
+        if (top == null)
             System.out.println("stack underflow");
-       else {
+        else {
             System.out.println("Popped = " + top.data);
             top = top.next;
         }
     }
 
-    void display(){
-        if(top==null)
+    void display() {
+        if (top == null)
             System.out.println("stack underflow");
         else {
             StackNode temp = top;
-            while(temp!=null){
+            while (temp != null) {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }
@@ -54,15 +65,15 @@ public class StackLinkedList {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         StackLinkedList stack = new StackLinkedList();
         stack.top = null;
         stack.push(5);
         stack.push(6);
         stack.push(8);
-        stack.pop();
-        stack.display();
         stack.push(9);
+        stack.display();
+        stack.reverse();
         stack.display();
         stack.isEmpty();
     }
