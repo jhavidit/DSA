@@ -1,4 +1,4 @@
-package binaryTree.introduction;
+package binaryTree.basic;
 
 public class BinaryTreeRepresentation {
 
