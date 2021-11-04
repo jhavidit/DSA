@@ -30,6 +30,8 @@ public class IterativePreOrder {
 
     public List<Integer> inorderSort(Node root) {
         List<Integer> list = new ArrayList<>();
+        if(root==null)
+            return list;
         Stack<Node> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
