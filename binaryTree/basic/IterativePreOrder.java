@@ -28,7 +28,7 @@ public class IterativePreOrder {
     }
 
 
-    public List<Integer> inorderSort(Node root) {
+    public List<Integer> preorder(Node root) {
         List<Integer> list = new ArrayList<>();
         if(root==null)
             return list;
@@ -53,7 +53,7 @@ public class IterativePreOrder {
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
         tree.root.right.right = new Node(4);
-        System.out.println(tree.inorderSort(tree.root));
+        System.out.println(tree.preorder(tree.root));
 
 
     }
