@@ -30,7 +30,7 @@ public class IterativePostOrderUsing2Stack {
         stack1.push(root);
         List<Integer> list = new ArrayList<>();
         if (root == null)
-            return null;
+            return list;
         while (!stack1.isEmpty()) {
             Node pointer = stack1.pop();
             stack2.push(pointer);
