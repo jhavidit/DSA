@@ -1,17 +1,14 @@
 package dynamicProgramming;
 
-import java.util.Arrays;
+public class ClimbingStairs {
 
-public class FibonacciNumber {
-
-    //Memoization
-    static int fibonacci(int n, int[] dp) {
+    static int climbingStairs(int n, int[] dp) {
         if (n <= 1)
-            return n;
+            return 1;
         if (dp[n] != -1) {
             return dp[n];
         } else {
-            return dp[n] = fibonacci(n - 1, dp) + fibonacci(n - 2, dp);
+            return dp[n] = climbingStairs(n - 1, dp) + climbingStairs(n - 2, dp);
         }
     }
     // TC - O(n)
@@ -19,9 +16,9 @@ public class FibonacciNumber {
 
 
     //Tabulation
-    static int fibonacci(int n) {
+    static int climbingStairs(int n) {
         int[] dp = new int[n + 1];
-        dp[0] = 0;
+        dp[0] = 1;
         dp[1] = 1;
         for (int i = 2; i <= n; i++) {
             dp[i] = dp[i - 1] + dp[i - 2];
@@ -31,10 +28,10 @@ public class FibonacciNumber {
     // SC - O(n)
 
     //Space Optimized
-    static int fibonacciSpaceOptimized(int n) {
+    static int climbingStairsSpaceOptimized(int n) {
         if (n == 0)
-            return 0;
-        int prev2 = 0;
+            return 1;
+        int prev2 = 1;
         int prev = 1;
 
         int curr;
@@ -46,10 +43,4 @@ public class FibonacciNumber {
         return prev;
     }// TC - O(n) SC - O(1)
 
-    public static void main(String[] args) {
-        int n = 5;
-        int[] dp = new int[n + 1];
-        Arrays.fill(dp, -1);
-        System.out.println(fibonacci(n, dp));
-    }
 }
